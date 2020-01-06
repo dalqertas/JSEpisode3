@@ -6,6 +6,7 @@
  ************************************/
 const logger = function(array) {
   // Your code here
+  array.forEach( el => console.log(el));
 };
 
 /*************************************
@@ -21,6 +22,9 @@ const logger = function(array) {
  ************************************/
 const toCelsius = function(temperatures) {
   // Your code here
+ let c;
+  c= temperatures.map( temp => ( temp - 32)*( 5 / 9) );
+  return c;
 };
 
 /**************************************
@@ -33,6 +37,9 @@ const toCelsius = function(temperatures) {
  ***************************************/
 const hottestDays = function(temperatures, threshhold) {
   // Your code here
+  let c;
+  c=temperatures.filter( temp => temp>threshhold);
+  return c;
 };
 
 /******************************************
@@ -50,7 +57,9 @@ const hottestDays = function(temperatures, threshhold) {
  *       all previous functions
  *******************************************/
 const logHottestDays = function(temperatures, threshhold) {
-  // Your code here
+  let f=temperatures.filter( temp => temp>threshhold);
+  let c= f.map( temp => ( temp - 32)*( 5 / 9) );
+  c.forEach( el => console.log(el));
 };
 
 export { logger, toCelsius, hottestDays, logHottestDays };
